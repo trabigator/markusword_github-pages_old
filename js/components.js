@@ -99,6 +99,7 @@ const SiteComponents = {
             </div>
             <div class="footer-credit">
                 <a href="/imprint/">Imprint</a>
+                <span>|</span>
                 <span>Made with ☕ and ❤️</span>
             </div>
         </div>`;
