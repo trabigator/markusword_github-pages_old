@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-+HMBJoeKaKxVa9408/956eni2EsOABhFgl+DxfxIeEg='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+    <title>Markus Dröws</title>
+    <meta name="description" content="Markus Dröws - Cyberanalyst, OSINT Specialist, Software Developer">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/marked.min.js" defer></script>
+    <script src="/js/purify.min.js" defer></script>
+    <script src="/js/posts.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        h1, h2 { font-family: 'Liberation Mono', monospace; }
+        body, h3, h4, h5, h6, p, a, li { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main id="main-content">
+        <section id="hero">
+            <div class="hero-content">
+                <a href="about/" class="avatar-link">
+                    <div class="avatar-placeholder">MD</div>
+                </a>
+                <div class="hero-text">
+                    <div class="title-row">
+                        <h1>Hi, I'm Markus</h1>
+                        <a target="_blank" href="rss.xml" class="rss-link" aria-label="rss feed" title="RSS Feed">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="5" cy="19" r="1"></circle>
+                                <path d="M4 4a16 16 0 0 1 16 16"></path>
+                                <path d="M4 11a9 9 0 0 1 9 9"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <p>
+                        Cyberanalyst, OSINT Specialist, Software Developer<br>
+                        There is always time for good coffee.
+                    </p>
+                    <div class="social-links">
+                        <!-- GitHub -->
+<a href="https://github.com/trabigator" class="social-link" title="GitHub">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+stroke="currentColor" stroke-width="1.75"
+stroke-linecap="round" stroke-linejoin="round">
+<path d="M9 19c-4 1.5-4-2-6-3"/>
+<path d="M15 21v-3.5c0-1 .1-1.5-.5-2 3-.35 5.5-1.5 5.5-6
+0-1.2-.4-2.3-1.2-3.2.1-.3.5-1.6-.1-3.3
+0 0-1.1-.3-3.5 1.3a11.8 11.8 0 0 0-6.4 0
+C6.4 2.4 5.3 2.7 5.3 2.7c-.6 1.7-.2 3 .1 3.3
+A4.6 4.6 0 0 0 4 9.5c0 4.5 2.5 5.6 5.5 6
+-.6.5-.6 1.2-.5 2V21"/>
+</svg>
+</a>
+
+<!-- X
+<a href="#" class="social-link" title="X">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+stroke="currentColor" stroke-width="1.75"
+stroke-linecap="round" stroke-linejoin="round">
+<path d="M4 4L20 20"/>
+<path d="M20 4L4 20"/>
+</svg>
+</a>
+-->
+<!-- Bluesky
+<a href="#" class="social-link" title="Bluesky">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+stroke="currentColor" stroke-width="1.75"
+stroke-linecap="round" stroke-linejoin="round">
+<path d="M12 12c-1.5-2.5-4.5-5.5-7-7-1-.6-2-.4-2 .7
+0 1.2.3 4 .6 5 .7 2.2 3 3 5.3 2.7
+-2.8.5-5.2 1.7-2 5 3.5 3.6 4.6-.7 5.1-2.7
+.5 2 1.6 6.3 5.1 2.7 3.2-3.3.8-4.5-2-5
+2.3.3 4.6-.5 5.3-2.7.3-1 .6-3.8.6-5
+0-1.1-1-1.3-2-.7-2.5 1.5-5.5 4.5-7 7z"/>
+</svg>
+</a>
+-->
+<!-- LinkedIn -->
+<a href="https://www.linkedin.com/in/markus-d140821" class="social-link" title="LinkedIn">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none"
+stroke="currentColor" stroke-width="1.75"
+stroke-linecap="round" stroke-linejoin="round">
+<rect x="3" y="3" width="18" height="18" rx="4"/>
+<path d="M8 11v5"/>
+<path d="M8 8v.01"/>
+<path d="M12 16v-5"/>
+<path d="M16 16v-3a2 2 0 0 0-4 0"/>
+</svg>
+</a>
+
+<!-- Email -->
+<a href="mailto:markusword.de@proton.me" class="social-link" title="Email">
+<svg width="28" height="18" viewBox="0 0 30 24" fill="none"
+     stroke="currentColor" stroke-width="1.75"
+     stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="3" width="24" height="18" rx="2"></rect>
+  <path d="M3 8l12 8 12-8"></path>
+</svg>
+</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="divider"></div>
+
+        <section id="recent-posts">
+            <ul>
+            </ul>
+        </section>
+        <div class="all-posts-link">
+            <a href="posts/">
+                All Posts
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="M13 18l6 -6"></path>
+                    <path d="M13 6l6 6"></path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const postsContainer = document.querySelector('#recent-posts ul');
+            if (postsContainer) {
+                const posts = await PostLoader.fetchPosts();
+                PostLoader.renderPostList(posts.slice(0, 7), postsContainer);
+            }
+        });
+    </script>
+</body>
+</html>

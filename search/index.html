@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-CKAaynP4p7wYGBKJTy4xICQlYyEt+QGGBd2I4O+5haM='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+    <title>Search - MD</title>
+    <meta name="description" content="Search posts on MD">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/marked.min.js" defer></script>
+    <script src="/js/purify.min.js" defer></script>
+    <script src="/js/posts.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        h1, h2 { font-family: 'Fira Code', monospace; }
+        body, h3, h4, h5, h6, p, a, li { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main id="main-content">
+        <section class="search-page">
+            <h1>Search</h1>
+            <div class="search-form">
+                <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+            </div>
+            <ul id="search-results"></ul>
+            <p id="search-empty" class="hidden">No posts found.</p>
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const searchInput = document.getElementById('search-input');
+            const resultsContainer = document.getElementById('search-results');
+            const emptyMessage = document.getElementById('search-empty');
+
+            const posts = await PostLoader.fetchPosts();
+            let filteredPosts = [];
+
+            function renderResults(posts) {
+                if (!posts.length) {
+                    resultsContainer.innerHTML = '';
+                    emptyMessage.classList.remove('hidden');
+                    return;
+                }
+                emptyMessage.classList.add('hidden');
+                
+                const pathname = window.location.pathname;
+                const isSubDir = pathname.startsWith('/') && pathname.split('/').filter(Boolean).length > 1;
+                const postBase = isSubDir ? '../post.html' : 'post.html';
+
+                resultsContainer.innerHTML = posts.map(post => `
+                    <li>
+                        <div class="post-item">
+                            <a href="${postBase}?year=${encodeURIComponent(post.year)}&slug=${encodeURIComponent(post.slug)}" class="post-link">
+                                <h3>${escapeHtml(post.headline)}</h3>
+                            </a>
+                            <div class="post-meta">
+                                <span class="date">
+                                    <time datetime="${escapeHtml(post.datetime)}">${PostLoader.formatDate(post.date)}</time>
+                                </span>
+                                <span class="read-time">- ${escapeHtml(post.readTime)}</span>
+                            </div>
+                            <p>${escapeHtml(post.teaser)}</p>
+                        </div>
+                    </li>
+                `).join('');
+            }
+
+            function filterPosts(query) {
+                const q = query.toLowerCase().trim();
+                if (!q) return [];
+                const qYear = q.match(/^(\d{4})$/);
+                return posts.filter(post => 
+                    post.headline.toLowerCase().includes(q) ||
+                    (post.teaser && post.teaser.toLowerCase().includes(q)) ||
+                    (post.content && post.content.toLowerCase().includes(q)) ||
+                    post.date.toLowerCase().includes(q) ||
+                    (post.tags && post.tags.some(tag => tag.toLowerCase().includes(q))) ||
+                    (qYear && post.year === qYear[1])
+                );
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                filteredPosts = filterPosts(e.target.value);
+                renderResults(filteredPosts);
+            });
+
+            renderResults([]);
+        });
+    </script>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+</body>
+</html>

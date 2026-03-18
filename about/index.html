@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://buttondown.com; frame-ancestors 'none';">
+    <title>About - MD</title>
+    <meta name="description" content="About MD - Developer, Designer, Creator.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/components.js" defer></script>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        h1, h2 { font-family: 'Fira Code', monospace; }
+        body, h3, h4, h5, h6, p, a, li { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main id="main-content">
+        <section class="page-content">
+            <h1>About Me</h1>
+            <p>Hi, I'm M. I'm a developer, designer, and creator.</p>
+            <p>I build things for the web and explore new technologies.</p>
+            <p>This is my personal space where I share my thoughts and projects.</p>
+        </section>
+        <h2>Stay connected</h2>
+        <section class="newsletter-box">
+            <p>Get notified when I publish new posts. No spam, unsubscribe anytime.</p>
+            <form action="https://buttondown.com/api/emails/embed-subscribe/markusword" method="post" target="_blank" class="newsletter-form">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="submit" value="Subscribe">
+            </form>
+            <p class="newsletter-note">2× per month, pure signal, zero fluff.</p>
+        </section>
+    </main>
+
+    <footer></footer>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+</body>
+</html>

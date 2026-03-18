@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-RDu31ciAAqe8g/6W8+/+US/d7izSTQqtFj96OVtwkUg='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none';">
+    <title>Posts | MD</title>
+    <meta name="description" content="All blog posts">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/marked.min.js" defer></script>
+    <script src="/js/purify.min.js" defer></script>
+    <script src="/js/posts.js" defer></script>
+    <script src="/js/components.js" defer></script>
+    <script src="/script.js" defer></script>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        h1, h2 { font-family: 'Fira Code', monospace; }
+        body, h3, h4, h5, h6, p, a, li { font-family: 'Nunito', sans-serif; }
+    </style>
+</head>
+<body>
+    <header></header>
+
+    <main id="main-content">
+        <section id="all-posts">
+            <h1>All Posts</h1>
+            <ul>
+            </ul>
+        </section>
+        <div class="divider"></div>
+        <div class="all-posts-link">
+            <a href="javascript:history.back()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"></path>
+                    <path d="M11 6L5 12"></path>
+                    <path d="M11 18L5 12"></path>
+                </svg>
+                Back
+            </a>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const postsContainer = document.querySelector('#all-posts ul');
+            if (postsContainer) {
+                const posts = await PostLoader.fetchPosts();
+                PostLoader.renderGroupedPosts(posts, postsContainer);
+            }
+        });
+    </script>
+    
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+</body>
+</html>
