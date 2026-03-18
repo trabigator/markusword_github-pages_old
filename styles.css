@@ -651,6 +651,7 @@ footer {
 .page-content p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-size: 1.15rem;
 }
 
 .search-page {
