@@ -901,11 +901,11 @@ footer {
     display: block;
     font-weight: 600;
     font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     max-width: 200px;
     text-align: right;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .back-to-top {

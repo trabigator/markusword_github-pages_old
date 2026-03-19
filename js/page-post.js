@@ -46,12 +46,27 @@ function setupShareButtons(post) {
     });
 }
 
+function wrapText(text, maxLen) {
+    const words = text.split(' ');
+    let line = '';
+    let result = '';
+    for (const word of words) {
+        if (line.length + word.length + 1 > maxLen && line.length > 0) {
+            result += line + '<wbr>';
+            line = word;
+        } else {
+            line += (line ? ' ' : '') + word;
+        }
+    }
+    return result + line;
+}
+
 function setupPostNavigation(post) {
     const navContainer = document.querySelector('.post-nav-links');
     let navHtml = '';
 
     if (post.nextPost) {
-        const nextTitle = escapeHtml(post.nextPost.headline);
+        const nextTitle = wrapText(escapeHtml(post.nextPost.headline), 30);
         const nextTeaser = escapeHtml(post.nextPost.teaser || '');
         const nextHeadline = escapeHtml(post.nextPost.headline);
         navHtml += `<a href="/post/${escapeHtml(post.nextPost.year)}/${escapeHtml(post.nextPost.month)}/${escapeHtml(post.nextPost.slug)}" class="post-nav-link" title="${nextHeadline}" aria-label="${nextTeaser}">
