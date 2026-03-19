@@ -5,7 +5,7 @@
     <link>https://www.markusword.de</link>
     <description>MD - Developer, Designer, Creator</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Mar 2026 07:49:16 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 08:52:03 GMT</lastBuildDate>
     <atom:link href="https://www.markusword.de/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Conversations About AI: Policing, Privacy, and the Future We’re Ignoring</title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https://www.markusword.de/post/2025/12/conversations-about-ai-policing-privacy-and-the-future-were-ignoring</guid>
       <description><![CDATA[From helping detectives solve cold cases to personal assistants analyzing our daily routines, AI holds enormous potential but only if we rethink our approach to technology, privacy, and responsibility. This isn’t just about efficiency. It’s about preparing society for a profound shift in how we live, work, and protect ourselves in an AI-driven world.]]></description>
       <pubDate>Mon, 08 Dec 2025 06:30:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Three Years to Justice: Why Police Digitalization Can&apos;t Wait</title>
+      <link>https://www.markusword.de/post/2025/11/three-years-to-justice-why-police-digitalization-cant-wait</link>
+      <guid isPermaLink="true">https://www.markusword.de/post/2025/11/three-years-to-justice-why-police-digitalization-cant-wait</guid>
+      <description><![CDATA[Forensic evidence takes up to 35 months to process while investigators rely on pinboards and printed lists to identify crime patterns. A former Europol analyst reveals why urgent digital transformation is needed in law enforcement to keep pace with modern criminal activity.]]></description>
+      <pubDate>Sat, 29 Nov 2025 22:05:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
