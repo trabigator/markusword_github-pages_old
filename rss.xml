@@ -5,8 +5,22 @@
     <link>https://www.markusword.de</link>
     <description>MD - Developer, Designer, Creator</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Mar 2026 10:05:38 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 12:55:57 GMT</lastBuildDate>
     <atom:link href="https://www.markusword.de/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Out for one week - Training in Linux and Virtualization</title>
+      <link>https://www.markusword.de/post/2026/03/out-for-one-week-training-in-linux-and-virtualization</link>
+      <guid isPermaLink="true">https://www.markusword.de/post/2026/03/out-for-one-week-training-in-linux-and-virtualization</guid>
+      <description><![CDATA[When your inbox pings with a training invite from the BKA, you don't hesitate. Last week, I spent five days immersed in advanced Linux and virtualization—with just 25 seats for the entire country. Here's what made it worth every minute, and why keeping high standards in our line of work matters more than ever.]]></description>
+      <pubDate>Thu, 19 Mar 2026 16:15:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>⚠️ Operational Insights: AI Support in an Emergency Situation</title>
+      <link>https://www.markusword.de/post/2026/01/-operational-insights-ai-support-in-an-emergency-situation</link>
+      <guid isPermaLink="true">https://www.markusword.de/post/2026/01/-operational-insights-ai-support-in-an-emergency-situation</guid>
+      <description><![CDATA[When an emergency exercise tested our team, I realized PowerPoint wasn't cutting it. In just one hour, I built an offline tool that handled maps, entities, and real-time reports on the fly. Here's how a quick solution saved the day—and what it taught me about when \"good enough\" beats perfect.]]></description>
+      <pubDate>Thu, 15 Jan 2026 17:21:00 GMT</pubDate>
+    </item>
     <item>
       <title>The AI Gap: About Criminals And Law Enforcement - One Innovates, One Waits</title>
       <link>https://www.markusword.de/post/2025/12/the-ai-gap-about-criminals-and-law-enforcement-one-innovates-one-waits</link>
