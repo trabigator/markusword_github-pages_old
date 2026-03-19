@@ -996,6 +996,10 @@ footer {
     padding: 2rem 0;
 }
 
+.newsletter-section h2 {
+    margin-top: 0;
+}
+
 .newsletter-box {
     border: 1px solid var(--border);
     border-radius: 8px;
