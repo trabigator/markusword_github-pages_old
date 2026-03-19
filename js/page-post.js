@@ -51,7 +51,7 @@ function setupPostNavigation(post) {
     let navHtml = '';
 
     if (post.nextPost) {
-        const nextTitle = escapeHtml(post.nextPost.headline.substring(0, 25));
+        const nextTitle = escapeHtml(post.nextPost.headline);
         const nextTeaser = escapeHtml(post.nextPost.teaser || '');
         const nextHeadline = escapeHtml(post.nextPost.headline);
         navHtml += `<a href="/post/${escapeHtml(post.nextPost.year)}/${escapeHtml(post.nextPost.month)}/${escapeHtml(post.nextPost.slug)}" class="post-nav-link" title="${nextHeadline}" aria-label="${nextTeaser}">
