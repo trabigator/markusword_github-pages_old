@@ -14,8 +14,8 @@ function assertSafePath(basePath, resolvedPath) {
 }
 
 const SITE_URL = 'https://www.markusword.de';
-const SITE_TITLE = 'MD';
-const SITE_DESCRIPTION = 'MD - Developer, Designer, Creator';
+const SITE_TITLE = 'Markus Dröws';
+const SITE_DESCRIPTION = 'Cyberanalyst, OSINT Specialist, Software Developer - Blog posts about technology, law enforcement, and innovation.';
 
 function parseFrontmatter(content) {
   const fm = {};

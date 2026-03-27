@@ -6,6 +6,38 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('post-read-time').textContent = '- ' + post.readTime;
         document.getElementById('post-body').innerHTML = post.content;
 
+        // Update SEO meta tags
+        const baseUrl = PostLoader.getBaseUrl();
+        const postUrl = `${baseUrl}/post/${post.year}/${post.month}/${post.slug}`;
+
+        document.getElementById('seo-title').textContent = post.headline;
+        document.getElementById('seo-description').content = post.teaser || '';
+        document.getElementById('og-title').content = post.headline;
+        document.getElementById('og-description').content = post.teaser || '';
+        document.getElementById('og-url').content = postUrl;
+        document.getElementById('twitter-title').content = post.headline;
+        document.getElementById('twitter-description').content = post.teaser || '';
+        document.getElementById('canonical-url').href = postUrl;
+
+        // Inject JSON-LD Article schema
+        const jsonld = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": post.headline,
+            "datePublished": post.datetime,
+            "author": {
+                "@type": "Person",
+                "name": "Markus Dröws",
+                "url": "https://www.markusword.de/about/"
+            },
+            "publisher": {
+                "@type": "Person",
+                "name": "Markus Dröws"
+            },
+            "description": post.teaser || ''
+        };
+        document.getElementById('jsonld').textContent = JSON.stringify(jsonld);
+
         if (post.tags && post.tags.length > 0) {
             const tagsContainer = document.getElementById('post-tags');
             tagsContainer.innerHTML = post.tags.map(tag =>
