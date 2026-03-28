@@ -82,14 +82,28 @@ function wrapText(text, maxLen) {
     const words = text.split(' ');
     let line = '';
     let result = '';
+
     for (const word of words) {
-        if (line.length + word.length + 1 > maxLen && line.length > 0) {
-            result += line + '<wbr>';
-            line = word;
+        if (line.length + word.length + 1 > maxLen) {
+            if (line.length > 0) {
+                result += line + '<wbr>';
+                line = '';
+            }
+            if (word.length > maxLen) {
+                let pos = 0;
+                while (pos + maxLen - 1 < word.length) {
+                    result += word.slice(pos, pos + maxLen - 1) + '<wbr>';
+                    pos += maxLen - 1;
+                }
+                line = word.slice(pos);
+            } else {
+                line = word;
+            }
         } else {
             line += (line ? ' ' : '') + word;
         }
     }
+
     return result + line;
 }
 
