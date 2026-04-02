@@ -1,4 +1,6 @@
-# [markusword.de](https://www.markusword.de)
+# [markusword.de](https://www.markusword.de) - OLD VERSION
+
+**See new GitHub project - [markusword.de - GitHub](https://github.com/trabigator/markusword.de)**
 
 Personal blog and portfolio — cyberanalyst, OSINT specialist, software developer.
 
